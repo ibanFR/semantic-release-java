@@ -51,6 +51,9 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
+      - name: Debug GPG keys
+        run: gpg --list-secret-keys --keyid-format=long
+
       - name: Publish package
 #        if: ${{ steps.release.outputs.new_release_version }}
         working-directory: ./java

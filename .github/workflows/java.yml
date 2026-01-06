@@ -39,3 +39,25 @@ jobs:
             @semantic-release/exec
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+
+      - name: Publish package
+        if: ${{ steps.release.outputs.new_release_version }}
+        working-directory: ./java
+        run: |
+          if [ -z "${{ secrets.PORTAL_TOKEN }}" ]; then
+            echo "::warning::Maven Central secrets are missing. Skipping publish."
+            exit 0
+          fi
+          mvn --batch-mode deploy --profile release
+        env:
+          MAVEN_USERNAME: ${{ secrets.PORTAL_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.PORTAL_TOKEN }}

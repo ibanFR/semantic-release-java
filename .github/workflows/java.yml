@@ -57,7 +57,7 @@ jobs:
             echo "::warning::Maven Central secrets are missing. Skipping publish."
             exit 0
           fi
-          mvn --batch-mode deploy --profile release
+          mvn --batch-mode deploy --activate-profiles release
         env:
           MAVEN_USERNAME: ${{ secrets.PORTAL_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.PORTAL_TOKEN }}

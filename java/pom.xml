@@ -10,7 +10,7 @@
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Java implementation of the LiftButton software</description>
-    <url>https://ibanfr.github.io/semantic-release-kata/</url>
+    <url>https://ibanfr.github.io/semantic-release-java/</url>
 
     <licenses>
         <license>
@@ -20,9 +20,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/ibanFR/semantic-release-kata.git</connection>
-        <developerConnection>scm:git:ssh://github.com:ibanFR/semantic-release-kata.git</developerConnection>
-        <url>https://github.com/ibanFR/semantic-release-kata/tree/main</url>
+        <connection>scm:git:git://github.com/ibanFR/semantic-release-java.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ibanFR/semantic-release-java.git</developerConnection>
+        <url>https://github.com/ibanFR/semantic-release-java/tree/main</url>
     </scm>
 
     <developers>

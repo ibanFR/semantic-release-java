@@ -50,7 +50,7 @@ jobs:
           server-password: MAVEN_PASSWORD
 
       - name: Publish package
-        if: ${{ steps.release.outputs.new_release_version }}
+#        if: ${{ steps.release.outputs.new_release_version }}
         working-directory: ./java
         run: |
           if [ -z "${{ secrets.PORTAL_TOKEN }}" ]; then

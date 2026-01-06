@@ -9,4 +9,3 @@ mvn test
 ```
 
 For more details, see the top-level [README.md](../README.md) file.
-
